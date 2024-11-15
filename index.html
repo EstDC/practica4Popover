@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Practica4</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="top-bar">
+    <div class="top-bar-container">
+      <div class="left-buttons">
+        <button id="menu-anchor" class="menu-icon" popovertarget="menu-popover" anchor-name="--menu-anchor">
+          <img class="search-icon" src="8666802_menu_navigation_icon.png" alt="Menú">
+        </button>
+        <nav class="side-menu" id="side-menu">
+          <button class="close-menu" id="close-menu" aria-label="Cerrar menú">✖</button>
+          <ul class="menu-list" id="menu-popover" popover>
+            <li class="menu-item home-item">
+              <a href="index.html" data-category="World News">Inicio</a>
+            </li>
+            <li class="menu-item">
+              <a href="#" data-category="World News">Mundo</a>
+            </li>
+            <li class="menu-item">
+              <a href="#" data-category="Sport">Deportes</a>
+            </li>
+            <li class="menu-item">
+              <a href="#" data-category="Finance">Finanzas</a>
+            </li>
+            <li class="menu-item">
+              <a href="#" data-category="Technology">Tecnología</a>
+            </li>
+            <li class="menu-item">
+              <a href="#" data-category="Entertainment">Entretenimiento</a>
+            </li>
+          </ul>
+        </nav>
+        <custom-search>
+          <button class="search-button" aria-label="Buscar">
+            <img class="search-icon" src="icons8-search-50.png" alt="Buscar">
+          </button>
+          <dialog>
+            <button class="close-btn" aria-label="Cerrar búsqueda">✖</button>
+            <input type="search" id="site-search" name="q" placeholder="Buscar..." aria-label="Buscar">
+            <ul id="search-results">
+            </ul>
+          </dialog>
+        </custom-search>
+      </div>
+      <div class="logo">
+        <a href="index.html">
+          <div class="logo-css">
+            <span class="logo-letter">B</span>
+            <span class="logo-letter">B</span>
+            <span class="logo-letter">C</span>
+          </div>
+        </a>
+      </div>
+      <div class="auth-buttons">
+        <button class="auth-button register-button">Registrarse</button>
+        <button class="auth-button sign-in-button">Entrar</button>
+      </div>
+    </div>
+  </header>
+ 
+  <div class="menu-overlay" id="menu-overlay"></div>
+  <nav class="main-nav">
+    <ul>
+      <li class="nav-item home-nav-item">
+        <a href="index.html" data-category="World News">Inicio</a>
+      </li>
+      <li class="nav-item">
+        <a href="#" data-category="World News">Mundo</a>
+      </li>
+      <li class="nav-item">
+        <a href="#" data-category="Sport">Deportes</a>
+      </li>
+      <li class="nav-item">
+        <a href="#" data-category="Finance">Finanzas</a>
+      </li>
+      <li class="nav-item">
+        <a href="#" data-category="Technology">Tecnología</a>
+      </li>
+      <li class="nav-item">
+        <a href="#" data-category="Entertainment">Entretenimiento</a>
+      </li>
+    </ul>
+  </nav>  
+  <main>
+    <section class="main-section">
+      <div class="section-header">
+        <hr class="section-title-line">
+        <div class="section-title">
+          <h2>Noticias Destacadas</h2>
+          <span class="section-arrow">›</span>
+        </div>
+      </div>
+      <div class="articles-grid" id="articles-grid">
+        <news-viewer></news-viewer>
+      </div>
+    </section>
+  </main>
+  <template id="article-template">
+    <div class="article">
+      <h3 class="title"></h3>
+      <p><strong>Autor:</strong> <span class="author"></span></p>
+      <p class="description clamp"></p>
+      <a class="read-more" href="#">Leer más</a>
+      <relative-time></relative-time>
+    </div>
+  </template>
+  
+  <template id="search-result-template">
+    <li class="search-result-item">
+        <div class="card">
+            <h2 class="item-title"><a></a></h2>
+            <p class="item-description"></p>
+            <relative-time></relative-time>
+        </div>
+    </li>
+</template>
+  
+  <footer class="footer">
+    <div class="footer-content">
+      <div class="footer-logo">
+        <div class="logo-css footer-logo-css">
+          <span class="logo-letter">B</span>
+          <span class="logo-letter">B</span>
+          <span class="logo-letter">C</span>
+        </div>
+      </div>
+      <nav class="footer-nav">
+        <ul class="footer-links">
+          <li><a href="#">Terms of Use</a></li>
+          <li><a href="#">About the BBC</a></li>
+          <li><a href="#">Privacy Policy</a></li>
+          <li><a href="#">Cookies</a></li>
+          <li><a href="#">Accessibility Help</a></li>
+          <li><a href="#">Contact the BBC</a></li>
+        </ul>
+      </nav>
+      <div class="social-media">
+        <a href="#" class="social-icon"><img src="icons8-twitter-96.png" alt="Twitter"></a>
+        <a href="#" class="social-icon"><img src="icons8-facebook-96.png" alt="Facebook"></a>
+        <a href="#" class="social-icon"><img src="icons8-instagram-96.png" alt="Instagram"></a>
+        <a href="#" class="social-icon"><img src="icons8-youtube-96.png" alt="YouTube"></a>
+      </div>
+    </div>
+  </footer>
+  
+  <script src="scripts.js"></script>
+  <script>
+    renderAllArticles();
+  </script>
+</body>
+</html>
